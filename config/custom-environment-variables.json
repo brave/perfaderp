@@ -1,4 +1,14 @@
 {
+  "awsAccessKeyId": "AWS_ACCESS_KEY_ID",
+  "awsSecretAccessKey": "AWS_SECRET_ACCESS_KEY",
+  "awsDefaultRegion": "AWS_DEFAULT_REGION",
+  "influxDatabase": "INFLUX_DATABASE",
+  "influxHost": "INFLUX_HOST",
+  "influxPort": "INFLUX_PORT",
+  "influxUsername": "INFLUX_USERNAME",
+  "influxPassword": "INFLUX_PASSWORD",
   "logLevel": "LOG_LEVEL",
-  "port": "PORT"
+  "port": "PORT",
+  "s3Bucket": "S3_BUCKET",
+  "sqsEndpointCpuProfiles": "SQS_ENDPOINT_CPU_PROFILES"
 }

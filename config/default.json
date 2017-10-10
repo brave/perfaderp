@@ -1,4 +1,13 @@
 {
+  "awsAccessKeyId": null,
+  "awsSecretAccessKey": null,
+  "awsDefaultRegion": "us-east-1",
+  "influxDatabase": "perfaderp_dev",
+  "influxHost": "localhost",
+  "influxPort": 8086,
+  "influxMeasurementStoryRuntime": "storyRuntime",
   "logLevel": "debug",
-  "port": "4000"
+  "port": "4000",
+  "s3Bucket": null,
+  "sqsEndpointCpuProfiles": null
 }

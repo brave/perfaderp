@@ -1,3 +1,4 @@
 {
+  "influxDatabase": "perfaderp_prod",
   "logLevel": "info"
 }
