@@ -12,7 +12,7 @@
     "influx": "^5.0.7",
     "node-schedule": "^1.2.5",
     "request": "^2.83.0",
-    "webkit-cpu-profiler-tools": "file:../webkit-cpu-profiler-tools",
+    "webkit-cpu-profiler-tools": "git+https://git@github.com/brave/webkit-cpu-profiler-tools.git",
     "winston": "^2.2.0"
   },
   "devDependencies": {

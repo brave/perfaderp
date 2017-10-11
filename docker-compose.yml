@@ -1,0 +1,43 @@
+version: "2"
+services:
+  node:
+    image: "node:8"
+    user: "node"
+    working_dir: /home/node/app
+    env_file:
+      - "env.node"
+    links:
+      - influxdb
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "8081:8081"
+    command: "npm start"
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    environment:
+      - INFLUXDB_REPORTING_DISABLED=true
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+      - "8090:8090"
+    volumes:
+      # Data persistency
+      # sudo mkdir -p /opt/influxdb/data
+      - /opt/influxdb/data:/var/lib/influxdb
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    links:
+      - influxdb
+    volumes_from:
+      - grafana-data
+  grafana-data:
+    image: busybox
+    tty: true
+    volumes:
+      - /opt/grafana/lib:/var/lib/grafana
+      - /opt/grafana/log:/var/log/grafana
