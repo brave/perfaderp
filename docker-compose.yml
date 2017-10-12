@@ -10,6 +10,9 @@ services:
       - influxdb
     ports:
       - "8081:8081"
+    restart: always
+    depends_on:
+      - influxdb
   influxdb:
     image: influxdb:latest
     container_name: influxdb
@@ -31,6 +34,10 @@ services:
     links:
       - influxdb
     volumes_from:
+      - grafana-data
+    restart: always
+    depends_on:
+      - influxdb
       - grafana-data
   grafana-data:
     image: busybox
