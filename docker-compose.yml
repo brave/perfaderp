@@ -1,18 +1,15 @@
 version: "2"
 services:
   node:
-    image: "node:8"
-    user: "node"
-    working_dir: /home/node/app
+    build:
+      context: .
+    image: perfaderp
     env_file:
       - "env.node"
     links:
       - influxdb
-    volumes:
-      - ./:/home/node/app
     ports:
       - "8081:8081"
-    command: "npm start"
   influxdb:
     image: influxdb:latest
     container_name: influxdb
